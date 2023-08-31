@@ -93,7 +93,7 @@ def parse_service_config(
     args = []
     patterns = []
 
-    variables = ProjectVariables()
+    variables = ProjectVariables(env=dict(os.environ))
 
     for config_entry in service_spec_config:
         key = config_entry["key"]
