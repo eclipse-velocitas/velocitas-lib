@@ -12,7 +12,6 @@
 #
 # SPDX-License-Identifier: Apache-2.0
 
-import os
 import re
 from typing import Dict
 
@@ -39,7 +38,7 @@ def json_obj_to_flat_map(obj, prefix: str = "", separator: str = ".") -> Dict[st
 
 
 class ProjectVariables:
-    def __init__(self, env: Dict[str, str] = os.environ):
+    def __init__(self, env: Dict[str, str]):
         self.__build_variables_map(env)
 
     def __build_variables_map(self, env: Dict[str, str]):

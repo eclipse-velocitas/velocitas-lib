@@ -4,7 +4,7 @@ python3 -m pip install lazydocs
 
 mkdir -p docs
 
-python3 -m pip install .
+python3 -m pip install -e .
 lazydocs --overview-file index.md .
 rm ./docs/.pages
 
