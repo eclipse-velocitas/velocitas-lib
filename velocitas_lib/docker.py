@@ -20,7 +20,9 @@ from typing import List
 from velocitas_lib import get_app_manifest, get_workspace_dir, require_env
 
 
-def build_vehicleapp_image(log_output: TextIOWrapper | int = subprocess.DEVNULL):
+def build_vehicleapp_image(
+    log_output: TextIOWrapper | int = subprocess.DEVNULL,
+) -> None:
     """Build VehicleApp docker image and display the progress using a spinner.
 
     Args:
@@ -86,7 +88,7 @@ def is_docker_image_build_locally(app_name: str) -> bool:
 
 def push_docker_image_to_registry(
     app_name: str, log_output: TextIOWrapper | int = subprocess.DEVNULL
-):
+) -> None:
     """Push docker image to local image registry
 
     Args:

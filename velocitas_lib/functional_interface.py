@@ -13,12 +13,12 @@
 # SPDX-License-Identifier: Apache-2.0
 
 
-from typing import List
+from typing import Any, Dict, List
 
 from velocitas_lib import get_app_manifest
 
 
-def get_interfaces_for_type(type: str) -> List:
+def get_interfaces_for_type(type: str) -> List[Dict[str, Any]]:
     """Return all interfaces for the given type.
 
     Args:

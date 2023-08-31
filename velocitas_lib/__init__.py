@@ -44,8 +44,14 @@ def get_workspace_dir() -> str:
     return require_env("VELOCITAS_WORKSPACE_DIR")
 
 
-def get_app_manifest() -> dict:
-    return json.loads(require_env("VELOCITAS_APP_MANIFEST"))
+def get_app_manifest() -> Dict[str, Any]:
+    manifest_data = json.loads(require_env("VELOCITAS_APP_MANIFEST"))
+    if isinstance(manifest_data, dict):
+        return manifest_data
+    elif isinstance(manifest_data, list) and isinstance(manifest_data[0], dict):
+        return manifest_data[0]
+    else:
+        raise TypeError("Manifest must be a dict or array!")
 
 
 def get_script_path() -> str:
@@ -71,7 +77,12 @@ def get_project_cache_dir() -> str:
 
 def get_cache_data() -> Dict[str, Any]:
     """Return the data of the cache as Python object."""
-    return json.loads(require_env("VELOCITAS_CACHE_DATA"))
+    cache_data = json.loads(require_env("VELOCITAS_CACHE_DATA"))
+
+    if not isinstance(cache_data, dict):
+        raise TypeError("VELOCITAS_CACHE_DATA has to be a JSON object!")
+
+    return cache_data
 
 
 def get_log_file_name(service_id: str, runtime_id: str) -> str:
@@ -107,7 +118,7 @@ def create_log_file(service_id: str, runtime_id: str) -> TextIOWrapper:
     return open(log_file_name, "w", encoding="utf-8")
 
 
-def download_file(uri: str, local_file_path: str):
+def download_file(uri: str, local_file_path: str) -> None:
     with requests.get(uri, timeout=30) as infile:
         os.makedirs(os.path.split(local_file_path)[0], exist_ok=True)
         with open(local_file_path, "wb") as outfile:

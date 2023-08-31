@@ -13,12 +13,14 @@
 # SPDX-License-Identifier: Apache-2.0
 
 import re
-from typing import Dict
+from typing import Any, Dict
 
 from velocitas_lib import get_cache_data, get_package_path
 
 
-def json_obj_to_flat_map(obj, prefix: str = "", separator: str = ".") -> Dict[str, str]:
+def json_obj_to_flat_map(
+    obj: Any, prefix: str = "", separator: str = "."
+) -> Dict[str, str]:
     """Flatten a JSON Object into a one dimensional dict by joining the keys
     with the specified separator."""
     result = dict[str, str]()
@@ -41,7 +43,7 @@ class ProjectVariables:
     def __init__(self, env: Dict[str, str]):
         self.__build_variables_map(env)
 
-    def __build_variables_map(self, env: Dict[str, str]):
+    def __build_variables_map(self, env: Dict[str, str]) -> None:
         variables: Dict[str, str] = {}
         variables.update(json_obj_to_flat_map(get_cache_data(), "builtin.cache"))
         variables.update(env)

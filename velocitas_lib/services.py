@@ -16,7 +16,7 @@ import json
 import os
 import re
 from pathlib import Path
-from typing import Dict, List, NamedTuple, Optional
+from typing import Any, Dict, List, NamedTuple, Optional
 
 from velocitas_lib import get_package_path, get_workspace_dir, require_env
 from velocitas_lib.variables import ProjectVariables
@@ -74,7 +74,7 @@ def resolve_functions(input_str: str) -> str:
 
 
 def parse_service_config(
-    service_id: str, service_spec_config: Dict
+    service_id: str, service_spec_config: List[Dict[str, Any]]
 ) -> ServiceSpecConfig:
     """Parse service spec configuration and return it as an named tuple.
 
@@ -163,7 +163,7 @@ def get_services(verbose: bool = True) -> List[Service]:
             if verbose:
                 print(f"runtime.json path redirected to {path}")
 
-    json_array: List[Dict] = json.load(
+    json_array: List[Dict[str, Any]] = json.load(
         open(
             path,
             encoding="utf-8",
