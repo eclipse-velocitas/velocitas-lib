@@ -16,7 +16,7 @@
 
 ```python
 json_obj_to_flat_map(
-    obj,
+    obj: Any,
     prefix: str = '',
     separator: str = '.'
 ) → Dict[str, str]
@@ -27,14 +27,14 @@ Flatten a JSON Object into a one dimensional dict by joining the keys with the s
 
 ---
 
-<a href="../velocitas_lib/variables.py#L40"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="../velocitas_lib/variables.py#L42"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ## <kbd>class</kbd> `ProjectVariables`
 
 
 
 
-<a href="../velocitas_lib/variables.py#L41"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="../velocitas_lib/variables.py#L43"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ### <kbd>method</kbd> `__init__`
 
@@ -51,7 +51,7 @@ __init__(env: Dict[str, str])
 
 ---
 
-<a href="../velocitas_lib/variables.py#L51"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="../velocitas_lib/variables.py#L53"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ### <kbd>method</kbd> `replace_occurrences`
 

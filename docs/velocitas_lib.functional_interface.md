@@ -15,7 +15,7 @@
 ## <kbd>function</kbd> `get_interfaces_for_type`
 
 ```python
-get_interfaces_for_type(type: str) → List
+get_interfaces_for_type(type: str) → List[Dict[str, Any]]
 ```
 
 Return all interfaces for the given type. 

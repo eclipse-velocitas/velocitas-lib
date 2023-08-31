@@ -15,7 +15,7 @@
 ## <kbd>function</kbd> `build_vehicleapp_image`
 
 ```python
-build_vehicleapp_image(log_output: TextIOWrapper | int = -3)
+build_vehicleapp_image(log_output: TextIOWrapper | int = -3) → None
 ```
 
 Build VehicleApp docker image and display the progress using a spinner. 
@@ -29,7 +29,7 @@ Build VehicleApp docker image and display the progress using a spinner.
 
 ---
 
-<a href="../velocitas_lib/docker.py#L68"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="../velocitas_lib/docker.py#L70"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ## <kbd>function</kbd> `is_docker_image_build_locally`
 
@@ -48,7 +48,7 @@ Check if vehicle app docker image is locally available
 
 ---
 
-<a href="../velocitas_lib/docker.py#L87"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="../velocitas_lib/docker.py#L89"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ## <kbd>function</kbd> `push_docker_image_to_registry`
 
@@ -56,7 +56,7 @@ Check if vehicle app docker image is locally available
 push_docker_image_to_registry(
     app_name: str,
     log_output: TextIOWrapper | int = -3
-)
+) → None
 ```
 
 Push docker image to local image registry 
@@ -71,7 +71,7 @@ Push docker image to local image registry
 
 ---
 
-<a href="../velocitas_lib/docker.py#L103"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="../velocitas_lib/docker.py#L105"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ## <kbd>function</kbd> `container_exists`
 

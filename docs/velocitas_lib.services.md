@@ -32,7 +32,7 @@ resolve_functions(input_str: str) → str
 ```python
 parse_service_config(
     service_id: str,
-    service_spec_config: Dict
+    service_spec_config: List[Dict[str, Any]]
 ) → ServiceSpecConfig
 ```
 

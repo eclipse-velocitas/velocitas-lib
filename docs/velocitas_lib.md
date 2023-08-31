@@ -59,7 +59,7 @@ Return the workspace directory.
 ## <kbd>function</kbd> `get_app_manifest`
 
 ```python
-get_app_manifest() → dict
+get_app_manifest() → Dict[str, Any]
 ```
 
 
@@ -69,7 +69,7 @@ get_app_manifest() → dict
 
 ---
 
-<a href="../velocitas_lib/__init__.py#L51"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="../velocitas_lib/__init__.py#L57"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ## <kbd>function</kbd> `get_script_path`
 
@@ -82,7 +82,7 @@ Return the absolute path to the directory the invoked Python script is located i
 
 ---
 
-<a href="../velocitas_lib/__init__.py#L57"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="../velocitas_lib/__init__.py#L63"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ## <kbd>function</kbd> `get_package_path`
 
@@ -95,7 +95,7 @@ Return the absolute path to the package directory the invoked Python script belo
 
 ---
 
-<a href="../velocitas_lib/__init__.py#L63"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="../velocitas_lib/__init__.py#L69"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ## <kbd>function</kbd> `get_project_cache_dir`
 
@@ -114,7 +114,7 @@ Return the project's cache directory.
 
 ---
 
-<a href="../velocitas_lib/__init__.py#L72"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="../velocitas_lib/__init__.py#L78"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ## <kbd>function</kbd> `get_cache_data`
 
@@ -127,7 +127,7 @@ Return the data of the cache as Python object.
 
 ---
 
-<a href="../velocitas_lib/__init__.py#L77"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="../velocitas_lib/__init__.py#L88"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ## <kbd>function</kbd> `get_log_file_name`
 
@@ -153,7 +153,7 @@ Build the log file name for the given service and runtime.
 
 ---
 
-<a href="../velocitas_lib/__init__.py#L90"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="../velocitas_lib/__init__.py#L101"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ## <kbd>function</kbd> `get_programming_language`
 
@@ -166,7 +166,7 @@ Return the programming language of the project.
 
 ---
 
-<a href="../velocitas_lib/__init__.py#L95"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="../velocitas_lib/__init__.py#L106"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ## <kbd>function</kbd> `create_log_file`
 
@@ -192,12 +192,12 @@ Create a log file for the given service and runtime.
 
 ---
 
-<a href="../velocitas_lib/__init__.py#L110"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="../velocitas_lib/__init__.py#L121"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ## <kbd>function</kbd> `download_file`
 
 ```python
-download_file(uri: str, local_file_path: str)
+download_file(uri: str, local_file_path: str) → None
 ```
 
 
