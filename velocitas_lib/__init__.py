@@ -57,7 +57,7 @@ def get_app_manifest() -> Dict[str, Any]:
 def get_script_path() -> str:
     """Return the absolute path to the directory the invoked Python script
     is located in."""
-    return os.path.dirname(os.path.realpath(sys.argv[0]))
+    return os.path.dirname(os.path.realpath(sys.argv[-1]))
 
 
 def get_package_path() -> str:
