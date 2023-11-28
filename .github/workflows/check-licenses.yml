@@ -33,13 +33,13 @@ jobs:
 
     steps:
       - name: Checkout repository
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
 
       - name: Clone License Check Repo
-        uses: actions/checkout@v3
+        uses: actions/checkout@v4
         with:
           repository: eclipse-velocitas/license-check
-          ref: v1.2.3
+          ref: v1.2
           path: .github/actions/license-check
 
       - name: Run License Checker
@@ -51,9 +51,10 @@ jobs:
           generate-dash: true
 
       - name: Setup Java JDK
-        uses: actions/setup-java@v1.4.4
+        uses: actions/setup-java@v3
         with:
-          java-version: 11.0.19
+          distribution: 'temurin'
+          java-version: 17
 
       - name: Run dash
         shell: bash

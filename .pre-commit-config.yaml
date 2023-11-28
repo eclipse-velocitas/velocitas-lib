@@ -16,7 +16,7 @@
 # See https://pre-commit.com/hooks.html for more hooks
 repos:
   - repo: https://github.com/pre-commit/pre-commit-hooks
-    rev: v4.4.0
+    rev: v4.5.0
     hooks:
       - id: trailing-whitespace
         exclude: docs
@@ -31,7 +31,7 @@ repos:
       - id: isort
 
   - repo: https://github.com/psf/black
-    rev: 23.7.0
+    rev: 23.11.0
     hooks:
       - id: black
 
@@ -51,13 +51,17 @@ repos:
         types: [python]
         args: ["--ini", "setup.cfg"]
 
-  - repo: https://github.com/pycqa/pydocstyle
-    rev: 6.3.0
+  - repo: https://github.com/astral-sh/ruff-pre-commit
+    rev: v0.1.6
     hooks:
-      - id: pydocstyle
+      # Run the linter.
+      - id: ruff
+        args: [--fix]
+      # Run the formatter.
+      - id: ruff-format
 
   - repo: https://github.com/pre-commit/mirrors-mypy
-    rev: "v1.5.1"
+    rev: "v1.7.1"
     hooks:
       - id: mypy
         args: [--strict, --ignore-missing-imports, velocitas_lib]
@@ -68,7 +72,7 @@ repos:
     rev: v1.5.4
     hooks:
       - id: insert-license
-        files: '.*\.(py|pyi|yaml|yml|sh|helmignore|dockerignore|gitignore)$'
+        files: '.*\.(py|pyi|yaml|yml|sh)$'
         exclude: .devcontainer/tests
         args:
           - --license-filepath
