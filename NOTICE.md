@@ -8,4 +8,3 @@ SPDX-License-Identifier: EPL-2.0
 
 ## Contributors:
 * Robert Bosch GmbH
-* Microsoft Corporation
