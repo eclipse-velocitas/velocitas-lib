@@ -3,6 +3,7 @@ name = "velocitas_lib"
 version = "0.0.2"
 dependencies = [
     "requests >= 2.31.0",
+    "types-requests"
 ]
 
 [build-system]
