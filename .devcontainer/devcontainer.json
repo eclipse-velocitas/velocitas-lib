@@ -17,10 +17,10 @@
 				"python.pythonPath": "/usr/bin/python3",
 				"python.defaultInterpreterPath": "/usr/bin/python3",
 				"[python]": {
-					"editor.formatOnSave": true,
+					"editor.formatOnSave": false,
 					"editor.codeActionsOnSave": {
-						"source.fixAll": true,
-						"source.organizeImports": true
+						"source.fixAll": "explicit",
+						"source.organizeImports": "explicit"
 					},
 					"editor.defaultFormatter": "charliermarsh.ruff"
 				},
