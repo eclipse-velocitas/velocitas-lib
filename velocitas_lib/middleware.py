@@ -24,4 +24,4 @@ class MiddlewareType(Enum):
 
 def get_middleware_type() -> MiddlewareType:
     """Return the current middleware type."""
-    return MiddlewareType.DAPR
+    return MiddlewareType.NATIVE
