@@ -3,8 +3,8 @@
 ## Python
 | Dependency | Version | License |
 |:-----------|:-------:|--------:|
-|types-requests|2.31.0.20240125|Apache 2.0|
-|urllib3|2.2.0|MIT|
+|types-requests|2.31.0.20240311|Apache 2.0|
+|urllib3|2.2.1|MIT|
 ## Workflows
 | Dependency | Version | License |
 |:-----------|:-------:|--------:|
