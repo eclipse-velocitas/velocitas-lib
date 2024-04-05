@@ -15,7 +15,7 @@
 
 - [`middleware.MiddlewareType`](./velocitas_lib.middleware.md#class-middlewaretype): Enumeration containing all possible middleware types.
 - [`services.Service`](./velocitas_lib.services.md#class-service): Service(id, config)
-- [`services.ServiceSpecConfig`](./velocitas_lib.services.md#class-servicespecconfig): ServiceSpecConfig(image, is_enabled, env_vars, use_dapr, args, ports, port_forwards, mounts, startup_log_patterns)
+- [`services.ServiceSpecConfig`](./velocitas_lib.services.md#class-servicespecconfig): ServiceSpecConfig(image, is_enabled, env_vars, args, ports, port_forwards, mounts, startup_log_patterns)
 - [`variables.ProjectVariables`](./velocitas_lib.variables.md#class-projectvariables)
 
 ## Functions

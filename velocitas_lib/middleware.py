@@ -19,7 +19,6 @@ class MiddlewareType(Enum):
     """Enumeration containing all possible middleware types."""
 
     NATIVE = 0
-    DAPR = 1
 
 
 def get_middleware_type() -> MiddlewareType:

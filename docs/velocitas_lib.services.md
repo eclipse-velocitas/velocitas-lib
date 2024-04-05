@@ -10,7 +10,7 @@
 
 ---
 
-<a href="../velocitas_lib/services.py#L42"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="../velocitas_lib/services.py#L41"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ## <kbd>function</kbd> `resolve_functions`
 
@@ -25,7 +25,7 @@ resolve_functions(input_str: str) → str
 
 ---
 
-<a href="../velocitas_lib/services.py#L76"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="../velocitas_lib/services.py#L75"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ## <kbd>function</kbd> `parse_service_config`
 
@@ -48,7 +48,7 @@ Parse service spec configuration and return it as an named tuple.
 
 ---
 
-<a href="../velocitas_lib/services.py#L150"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="../velocitas_lib/services.py#L140"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ## <kbd>function</kbd> `get_services`
 
@@ -61,7 +61,7 @@ Return all specified services as Python object.
 
 ---
 
-<a href="../velocitas_lib/services.py#L191"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="../velocitas_lib/services.py#L181"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ## <kbd>function</kbd> `get_specific_service`
 
@@ -80,7 +80,7 @@ Return the specified service as Python object.
 
 ---
 
-<a href="../velocitas_lib/services.py#L208"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="../velocitas_lib/services.py#L198"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ## <kbd>function</kbd> `get_service_port`
 
@@ -102,7 +102,7 @@ Return the service port as string for the specified service.
 <a href="../velocitas_lib/services.py#L25"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ## <kbd>class</kbd> `ServiceSpecConfig`
-ServiceSpecConfig(image, is_enabled, env_vars, use_dapr, args, ports, port_forwards, mounts, startup_log_patterns) 
+ServiceSpecConfig(image, is_enabled, env_vars, args, ports, port_forwards, mounts, startup_log_patterns) 
 
 
 
@@ -110,7 +110,7 @@ ServiceSpecConfig(image, is_enabled, env_vars, use_dapr, args, ports, port_forwa
 
 ---
 
-<a href="../velocitas_lib/services.py#L37"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="../velocitas_lib/services.py#L36"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ## <kbd>class</kbd> `Service`
 Service(id, config) 
