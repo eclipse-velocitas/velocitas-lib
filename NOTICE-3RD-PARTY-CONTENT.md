@@ -8,10 +8,10 @@
 ## Workflows
 | Dependency | Version | License |
 |:-----------|:-------:|--------:|
-|5monkeys/cobertura-action|v13|MIT License|
+|5monkeys/cobertura-action|v14|MIT License|
 |actions/checkout|v4|MIT License|
-|actions/setup-java|v3|MIT License|
-|actions/setup-python|v4|MIT License|
-|actions/upload-artifact|v3|MIT License|
+|actions/setup-java|v4|MIT License|
+|actions/setup-python|v5|MIT License|
+|actions/upload-artifact|v4|MIT License|
 |mikepenz/action-junit-report|v4|Apache License 2.0|
 |pre-commit/action|v3.0.0|MIT License|
