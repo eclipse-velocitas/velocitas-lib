@@ -10,7 +10,7 @@
 
 ---
 
-<a href="../velocitas_lib/middleware.py#L25"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="../velocitas_lib/middleware.py#L24"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ## <kbd>function</kbd> `get_middleware_type`
 

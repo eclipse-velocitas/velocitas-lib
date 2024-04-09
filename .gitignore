@@ -6,7 +6,6 @@ dist
 build
 logs
 results
-helm
 .pytest_cache
 
 mkdocs.yml

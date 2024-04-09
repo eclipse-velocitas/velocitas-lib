@@ -26,7 +26,6 @@ class ServiceSpecConfig(NamedTuple):
     image: str
     is_enabled: bool = True
     env_vars: Dict[str, Optional[str]] = dict()
-    use_dapr: bool = True
     args: List[str] = list()
     ports: List[str] = list()
     port_forwards: List[str] = list()
@@ -84,7 +83,6 @@ def parse_service_config(
     """
 
     is_enabled = True
-    use_dapr = True
     container_image = None
     env_vars = dict[str, Optional[str]]()
     ports = []
@@ -113,13 +111,6 @@ def parse_service_config(
             env_vars[inner_key] = None
             if len(pair) > 1:
                 env_vars[inner_key] = pair[1].strip()
-        elif key == "no-dapr":
-            if isinstance(value, str):
-                use_dapr = not value == "true"
-            elif isinstance(value, bool):
-                use_dapr = not value
-            else:
-                raise ValueError("Unsupported value type!")
         elif key == "arg":
             args.append(value)
         elif key == "port":
@@ -138,7 +129,6 @@ def parse_service_config(
         image=container_image,
         is_enabled=is_enabled,
         env_vars=env_vars,
-        use_dapr=use_dapr,
         args=args,
         ports=ports,
         port_forwards=port_forwards,
