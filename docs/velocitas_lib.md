@@ -12,6 +12,136 @@
 
 <a href="../velocitas_lib/__init__.py#L24"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
+## <kbd>function</kbd> `to_camel_case`
+
+```python
+to_camel_case(snake_str: str) → str
+```
+
+Return a camel case version of a snake case string. 
+
+
+
+**Args:**
+ 
+ - <b>`snake_str`</b> (str):  A snake case string. 
+
+
+
+**Returns:**
+ 
+ - <b>`str`</b>:  A camel case version of a snake case string. 
+
+
+---
+
+<a href="../velocitas_lib/__init__.py#L36"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+
+## <kbd>function</kbd> `create_truncated_string`
+
+```python
+create_truncated_string(input: str, length: int) → str
+```
+
+Create a truncated version of input if it is longer than length. Will keep the rightmost characters and cut of the front if it is longer than allowed. 
+
+
+
+**Args:**
+ 
+ - <b>`input`</b> (str):  The input string. 
+ - <b>`length`</b> (int):  The allowed overall length. 
+
+
+
+**Returns:**
+ 
+ - <b>`str`</b>:  A truncated string which has len() of length. 
+
+
+---
+
+<a href="../velocitas_lib/__init__.py#L54"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+
+## <kbd>function</kbd> `replace_in_file`
+
+```python
+replace_in_file(file_path: str, text: str, replacement: str) → None
+```
+
+Replace all occurrences of text in a file with a replacement. 
+
+
+
+**Args:**
+ 
+ - <b>`file_path`</b> (str):  The path to the file. 
+ - <b>`text`</b> (str):  The text to find. 
+ - <b>`replacement`</b> (str):  The replacement for text. 
+
+
+---
+
+<a href="../velocitas_lib/__init__.py#L71"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+
+## <kbd>function</kbd> `get_valid_arch`
+
+```python
+get_valid_arch(arch: str) → str
+```
+
+Return a known architecture for the given `arch`. 
+
+
+
+**Args:**
+ 
+ - <b>`arch`</b> (str):  The architecture of the profile. 
+
+
+
+**Returns:**
+ 
+ - <b>`str`</b>:  valid architecture. 
+
+
+---
+
+<a href="../velocitas_lib/__init__.py#L88"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+
+## <kbd>function</kbd> `capture_textfile_area`
+
+```python
+capture_textfile_area(
+    file: TextIOWrapper,
+    start_line: str,
+    end_line: str,
+    map_fn: Optional[Callable[[str], str]] = None
+) → List[str]
+```
+
+Capture an area of a textfile between a matching start line (exclusive) and the first line matching end_line (exclusive). 
+
+
+
+**Args:**
+ 
+ - <b>`file`</b> (TextIOWrapper):  The text file to read from. 
+ - <b>`start_line`</b> (str):  The line which triggers the capture (will not be part of the output) 
+ - <b>`end_line`</b> (str):  The line which terminates the capture (will not be bart of the output) 
+ - <b>`map_fn`</b> (Optional[Callable[[str], str]], optional):  An optional mapping function to transform captured lines. Defaults to None. 
+
+
+
+**Returns:**
+ 
+ - <b>`List[str]`</b>:  A list of captured lines. 
+
+
+---
+
+<a href="../velocitas_lib/__init__.py#L122"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+
 ## <kbd>function</kbd> `require_env`
 
 ```python
@@ -41,7 +171,7 @@ Require and return an environment variable.
 
 ---
 
-<a href="../velocitas_lib/__init__.py#L42"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="../velocitas_lib/__init__.py#L140"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ## <kbd>function</kbd> `get_workspace_dir`
 
@@ -54,7 +184,7 @@ Return the workspace directory.
 
 ---
 
-<a href="../velocitas_lib/__init__.py#L47"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="../velocitas_lib/__init__.py#L145"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ## <kbd>function</kbd> `get_app_manifest`
 
@@ -69,7 +199,7 @@ get_app_manifest() → Dict[str, Any]
 
 ---
 
-<a href="../velocitas_lib/__init__.py#L57"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="../velocitas_lib/__init__.py#L155"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ## <kbd>function</kbd> `get_script_path`
 
@@ -82,7 +212,7 @@ Return the absolute path to the directory the invoked Python script is located i
 
 ---
 
-<a href="../velocitas_lib/__init__.py#L63"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="../velocitas_lib/__init__.py#L161"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ## <kbd>function</kbd> `get_package_path`
 
@@ -95,7 +225,7 @@ Return the absolute path to the package directory the invoked Python script belo
 
 ---
 
-<a href="../velocitas_lib/__init__.py#L69"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="../velocitas_lib/__init__.py#L167"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ## <kbd>function</kbd> `get_project_cache_dir`
 
@@ -114,7 +244,7 @@ Return the project's cache directory.
 
 ---
 
-<a href="../velocitas_lib/__init__.py#L78"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="../velocitas_lib/__init__.py#L176"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ## <kbd>function</kbd> `get_cache_data`
 
@@ -127,7 +257,7 @@ Return the data of the cache as Python object.
 
 ---
 
-<a href="../velocitas_lib/__init__.py#L88"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="../velocitas_lib/__init__.py#L186"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ## <kbd>function</kbd> `get_log_file_name`
 
@@ -153,7 +283,7 @@ Build the log file name for the given service and runtime.
 
 ---
 
-<a href="../velocitas_lib/__init__.py#L101"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="../velocitas_lib/__init__.py#L199"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ## <kbd>function</kbd> `get_programming_language`
 
@@ -166,7 +296,7 @@ Return the programming language of the project.
 
 ---
 
-<a href="../velocitas_lib/__init__.py#L106"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="../velocitas_lib/__init__.py#L204"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ## <kbd>function</kbd> `create_log_file`
 
@@ -192,7 +322,7 @@ Create a log file for the given service and runtime.
 
 ---
 
-<a href="../velocitas_lib/__init__.py#L121"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="../velocitas_lib/__init__.py#L219"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ## <kbd>function</kbd> `download_file`
 
