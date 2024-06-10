@@ -10,7 +10,7 @@
 
 ---
 
-<a href="../velocitas_lib/conan_helper.py#L24"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="../velocitas_lib/conan_helper.py#L22"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ## <kbd>function</kbd> `get_required_sdk_version`
 
@@ -29,40 +29,7 @@ Return the required version of the core SDK.
 
 ---
 
-<a href="../velocitas_lib/conan_helper.py#L41"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
-
-## <kbd>function</kbd> `move_sources`
-
-```python
-move_sources(
-    source_dir: str,
-    output_dir: str,
-    include_dir_rel: str,
-    src_dir_rel: str
-) → Tuple[List[str], List[str]]
-```
-
-Move source and header files from the source dir into headers: <output_dir>/<include_dir_rel> sources: <output_dir>/<src_dir_rel> 
-
-
-
-**Args:**
- 
- - <b>`source_dir`</b> (str):  The directory containing the source (*.cc) and header (*.h) files. 
- - <b>`output_dir`</b> (str):  The root directory to move the input files to. 
- - <b>`include_dir_rel`</b> (str):  Path relative to output_dir where to move the headers to. 
- - <b>`src_dir_rel`</b> (str):  Path relative to the output_dir where to move the sources to. 
-
-
-
-**Returns:**
- 
- - <b>`Tuple[List[str], List[str]]`</b>:  A tuple containing  [0] = a list of the paths to all headers  [1] = a list of the paths to all sources 
-
-
----
-
-<a href="../velocitas_lib/conan_helper.py#L80"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="../velocitas_lib/conan_helper.py#L39"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ## <kbd>function</kbd> `export_conan_project`
 
@@ -81,7 +48,7 @@ Export a conan project to the local conan cache.
 
 ---
 
-<a href="../velocitas_lib/conan_helper.py#L139"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="../velocitas_lib/conan_helper.py#L98"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ## <kbd>function</kbd> `add_dependency_to_conanfile`
 

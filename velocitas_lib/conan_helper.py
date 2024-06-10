@@ -12,9 +12,7 @@
 #
 # SPDX-License-Identifier: Apache-2.0
 
-import glob
 import os
-import shutil
 import subprocess
 from typing import List, Optional, Tuple
 
@@ -36,45 +34,6 @@ def get_required_sdk_version() -> Optional[str]:
                 sdk_version = line.split("/", maxsplit=1)[1].split("@")[0].strip()
 
     return sdk_version
-
-
-def move_sources(
-    source_dir: str, output_dir: str, include_dir_rel: str, src_dir_rel: str
-) -> Tuple[List[str], List[str]]:
-    """Move source and header files from the source dir into
-    headers: <output_dir>/<include_dir_rel>
-    sources: <output_dir>/<src_dir_rel>
-
-    Args:
-        source_dir (str): The directory containing the source (*.cc) and header (*.h) files.
-        output_dir (str): The root directory to move the input files to.
-        include_dir_rel (str): Path relative to output_dir where to move the headers to.
-        src_dir_rel (str): Path relative to the output_dir where to move the sources to.
-
-    Returns:
-        Tuple[List[str], List[str]]: A tuple containing
-            [0] = a list of the paths to all headers
-            [1] = a list of the paths to all sources
-    """
-
-    headers = glob.glob(os.path.join(source_dir, "*.h"))
-    sources = glob.glob(os.path.join(source_dir, "*.cc"))
-
-    headers_relative = []
-    for header in headers:
-        rel_path = os.path.relpath(header, source_dir)
-        os.makedirs(os.path.join(output_dir, include_dir_rel), exist_ok=True)
-        shutil.move(header, os.path.join(output_dir, include_dir_rel, rel_path))
-        headers_relative.append(os.path.join(include_dir_rel, rel_path))
-
-    sources_relative = []
-    for source in sources:
-        rel_path = os.path.relpath(source, source_dir)
-        os.makedirs(os.path.join(output_dir, src_dir_rel), exist_ok=True)
-        shutil.move(source, os.path.join(output_dir, src_dir_rel, rel_path))
-        sources_relative.append(os.path.join(src_dir_rel, rel_path))
-
-    return headers_relative, sources_relative
 
 
 def export_conan_project(conan_project_path: str) -> None:

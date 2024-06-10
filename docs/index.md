@@ -42,7 +42,6 @@
 - [`conan_helper.add_dependency_to_conanfile`](./velocitas_lib.conan_helper.md#function-add_dependency_to_conanfile): Add the dependency name to the project's list of dependencies.
 - [`conan_helper.export_conan_project`](./velocitas_lib.conan_helper.md#function-export_conan_project): Export a conan project to the local conan cache.
 - [`conan_helper.get_required_sdk_version`](./velocitas_lib.conan_helper.md#function-get_required_sdk_version): Return the required version of the core SDK.
-- [`conan_helper.move_sources`](./velocitas_lib.conan_helper.md#function-move_sources): Move source and header files from the source dir into
 - [`docker.build_vehicleapp_image`](./velocitas_lib.docker.md#function-build_vehicleapp_image): Build VehicleApp docker image and display the progress using a spinner.
 - [`docker.container_exists`](./velocitas_lib.docker.md#function-container_exists): Check if a container with a given name exists.
 - [`docker.is_docker_image_build_locally`](./velocitas_lib.docker.md#function-is_docker_image_build_locally): Check if vehicle app docker image is locally available
