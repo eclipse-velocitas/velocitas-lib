@@ -1,6 +1,7 @@
 [project]
 name = "velocitas-lib"
 dynamic = ["version"]
+readme = "README.md"
 dependencies = [
     "requests >= 2.31.0",
     "types-requests"
