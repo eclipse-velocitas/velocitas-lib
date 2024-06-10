@@ -38,16 +38,16 @@ def get_required_sdk_version() -> Optional[str]:
     return sdk_version
 
 
-def move_generated_sources(
-    generated_source_dir: str, output_dir: str, include_dir_rel: str, src_dir_rel: str
+def move_sources(
+    source_dir: str, output_dir: str, include_dir_rel: str, src_dir_rel: str
 ) -> Tuple[List[str], List[str]]:
-    """Move generated source code from the generation dir into
+    """Move source and header files from the source dir into
     headers: <output_dir>/<include_dir_rel>
     sources: <output_dir>/<src_dir_rel>
 
     Args:
-        generated_source_dir (str): The directory containing the generated sources.
-        output_dir (str): The root directory to move the generated files to.
+        source_dir (str): The directory containing the source (*.cc) and header (*.h) files.
+        output_dir (str): The root directory to move the input files to.
         include_dir_rel (str): Path relative to output_dir where to move the headers to.
         src_dir_rel (str): Path relative to the output_dir where to move the sources to.
 
@@ -57,19 +57,19 @@ def move_generated_sources(
             [1] = a list of the paths to all sources
     """
 
-    headers = glob.glob(os.path.join(generated_source_dir, "*.h"))
-    sources = glob.glob(os.path.join(generated_source_dir, "*.cc"))
+    headers = glob.glob(os.path.join(source_dir, "*.h"))
+    sources = glob.glob(os.path.join(source_dir, "*.cc"))
 
     headers_relative = []
     for header in headers:
-        rel_path = os.path.relpath(header, generated_source_dir)
+        rel_path = os.path.relpath(header, source_dir)
         os.makedirs(os.path.join(output_dir, include_dir_rel), exist_ok=True)
         shutil.move(header, os.path.join(output_dir, include_dir_rel, rel_path))
         headers_relative.append(os.path.join(include_dir_rel, rel_path))
 
     sources_relative = []
     for source in sources:
-        rel_path = os.path.relpath(source, generated_source_dir)
+        rel_path = os.path.relpath(source, source_dir)
         os.makedirs(os.path.join(output_dir, src_dir_rel), exist_ok=True)
         shutil.move(source, os.path.join(output_dir, src_dir_rel, rel_path))
         sources_relative.append(os.path.join(src_dir_rel, rel_path))
