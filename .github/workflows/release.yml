@@ -80,19 +80,19 @@ jobs:
       uses: actions/download-artifact@v4
       with:
         name: python-package-distributions
-        path: python-package-distributions/
+        path: python-package/
     - name: Sign the dists with Sigstore
       uses: sigstore/gh-action-sigstore-python@v2.1.1
       with:
         inputs: >-
-          ./python-package-distributions/dist/*.tar.gz
-          ./python-package-distributions/dist/*.whl
+          ./python-package/dist/*.tar.gz
+          ./python-package/dist/*.whl
     - name: Create release
       id: create_release
       uses: softprops/action-gh-release@v2
       with:
         fail_on_unmatched_files: true
         files: |
-          dist/**
-          LICENSE
-          NOTICE.md
+          python-package/dist/**
+          python-package/LICENSE
+          python-package/NOTICE.md
