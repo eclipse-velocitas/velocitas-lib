@@ -15,12 +15,6 @@
 name: Publish Python 🐍 distribution 📦 to PyPI
 
 on:
-  workflow_dispatch: # input version manually. Overrides push tag
-    inputs:
-      tag:
-        description: "Release version"
-        required: true
-        default: "v0.0.0"
   push:
    tags:
      - "v*.*.*"
@@ -37,11 +31,7 @@ jobs:
       with:
         python-version: "3.10"
     - name: Install pypa/build
-      run: >-
-        python3 -m
-        pip install
-        build
-        --user
+      run: pip install build --user
     - name: Build a binary wheel and a source tarball
       run: python3 -m build
     - name: Store the distribution packages
@@ -51,9 +41,7 @@ jobs:
         path: dist/
 
   publish-to-pypi:
-    name: >-
-      Publish Python 🐍 distribution 📦 to PyPI
-    if: startsWith(github.ref, 'refs/tags/')
+    name: Publish Python 🐍 distribution 📦 to PyPI
     needs:
     - build
     runs-on: ubuntu-22.04
@@ -84,7 +72,7 @@ jobs:
       id-token: write
 
     steps:
-    - name: Download all the dists
+    - name: Download dists folder
       uses: actions/download-artifact@v4
       with:
         name: python-package-distributions
@@ -98,9 +86,8 @@ jobs:
     - name: Create release
       id: create_release
       uses: softprops/action-gh-release@v2
-      if: startsWith(github.ref, 'refs/tags/')
-      fail_on_unmatched_files: true
       with:
+        fail_on_unmatched_files: true
         files: |
           dist/**
           LICENSE
