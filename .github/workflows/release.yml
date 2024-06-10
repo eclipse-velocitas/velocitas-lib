@@ -77,7 +77,6 @@ jobs:
     permissions:
       contents: write
       id-token: write
-      packages: read
 
     steps:
     - name: Download dists folder
@@ -95,7 +94,6 @@ jobs:
       id: create_release
       uses: softprops/action-gh-release@v2
       with:
-        fail_on_unmatched_files: true
         files: |
           python-package/dist/**
           python-package/LICENSE
