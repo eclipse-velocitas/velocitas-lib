@@ -1,3 +1,17 @@
+# Copyright (c) 2024 Contributors to the Eclipse Foundation
+#
+# This program and the accompanying materials are made available under the
+# terms of the Apache License, Version 2.0 which is available at
+# https://www.apache.org/licenses/LICENSE-2.0.
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+# WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+# License for the specific language governing permissions and limitations
+# under the License.
+#
+# SPDX-License-Identifier: Apache-2.0
+
 from io import TextIOWrapper
 from typing import Callable, List, Optional
 
@@ -62,8 +76,7 @@ def replace_line(
     """
     buffer: List[str] = []
     for line in text:
-        is_match = line.__contains__(matching_text)
-        if is_match:
+        if matching_text in line:
             line = replacement
 
             isEmptyLine = line == ""
@@ -79,7 +92,7 @@ def replace_text_area(
     text: List[str], start_occurence: str, end_occurence: str, replacement: str = ""
 ) -> List[str]:
     """Replace all occurrences of all text areas matching the parameters with a replacement.
-    If replacement for a line is empty, the line will be removed.
+    If the replacement for a line is empty, then the line will be removed.
 
     Args:
         text (List[str]): All text lines to replace text within.
@@ -89,24 +102,21 @@ def replace_text_area(
     """
     buffer = []
     is_capturing = False
+
     for line in text:
-        is_starting_match = not is_capturing and line.__contains__(start_occurence)
-        if is_starting_match:
-            is_capturing = True
+        if not is_capturing:
+            if start_occurence in line:
+                is_capturing = True
+                continue
+        
+            buffer.append(line)
             continue
 
-        if is_capturing:
-            is_end_match = line.__contains__(end_occurence)
-            if is_end_match:
-                is_capturing = False
+        if end_occurence in line:
+            is_capturing = False
 
-                if replacement == "":
-                    continue
-
-                replacement = line.replace(line, replacement)
+            if replacement:
                 buffer.append(replacement)
-        else:
-            buffer.append(line)
 
     return buffer
 

@@ -1,6 +1,17 @@
-import os
+# Copyright (c) 2024 Contributors to the Eclipse Foundation
+#
+# This program and the accompanying materials are made available under the
+# terms of the Apache License, Version 2.0 which is available at
+# https://www.apache.org/licenses/LICENSE-2.0.
+#
+# Unless required by applicable law or agreed to in writing, software
+# distributed under the License is distributed on an "AS IS" BASIS, WITHOUT
+# WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied. See the
+# License for the specific language governing permissions and limitations
+# under the License.
+#
+# SPDX-License-Identifier: Apache-2.0
 
-import pytest
 from typing_extensions import LiteralString
 
 from velocitas_lib.text_helper import (
@@ -30,23 +41,14 @@ class SeatsServiceStub(seats_service_sdk.seats_pb2_grpc.SeatsServicer):
         context.set_code(grpc.StatusCode.UNIMPLEMENTED)
         context.set_details('Method not implemented!')
         raise NotImplementedError('Method not implemented!')
-        
+
      # </auto-generated>
 """.splitlines()
 
-
-@pytest.fixture()
-def set_env_vars() -> None:
-    os.environ["VELOCITAS_WORKSPACE_DIR"] = "./tests/project"
+test_text: list[str] = [str(line) for line in test_text_literal]
 
 
 def test_replace_line():
-    test_text: list[str] = []
-    for text_literal in test_text_literal:
-        test_text.append(text_literal)
-
-    assert len(test_text) == 24
-
     # Replace string
     replaced_text = replace_line(
         test_text,
@@ -67,10 +69,6 @@ def test_replace_line():
 
 
 def test_replace_text_area():
-    test_text: list[str] = []
-    for text_literal in test_text_literal:
-        test_text.append(text_literal)
-
     # Replace string
     replaced_text = replace_text_area(
         test_text,
