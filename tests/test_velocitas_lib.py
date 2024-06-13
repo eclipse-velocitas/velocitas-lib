@@ -151,11 +151,8 @@ def test_get_services__overwrite_provided__returns_overwritten_services(
 
 
 def test_get_file_path__absolute_local_path(set_velocitas_workspace_dir):
-    root=os.path.dirname(os.path.dirname(os.path.realpath(__file__)))
-    assert (
-        get_file_path(f"{root}/README.md")
-        == f"{root}/README.md"
-    )
+    root = os.path.dirname(os.path.dirname(os.path.realpath(__file__)))
+    assert get_file_path(f"{root}/README.md") == f"{root}/README.md"
 
 
 def test_get_file_path__relative_local_path(set_velocitas_workspace_dir):
