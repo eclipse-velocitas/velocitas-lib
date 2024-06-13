@@ -11,6 +11,7 @@
 - [`velocitas_lib.middleware`](./velocitas_lib.middleware.md#module-velocitas_libmiddleware)
 - [`velocitas_lib.services`](./velocitas_lib.services.md#module-velocitas_libservices)
 - [`velocitas_lib.templates`](./velocitas_lib.templates.md#module-velocitas_libtemplates)
+- [`velocitas_lib.text_helper`](./velocitas_lib.text_helper.md#module-velocitas_libtext_helper)
 - [`velocitas_lib.variables`](./velocitas_lib.variables.md#module-velocitas_libvariables)
 
 ## Classes
@@ -23,9 +24,7 @@
 
 ## Functions
 
-- [`velocitas_lib.capture_textfile_area`](./velocitas_lib.md#function-capture_textfile_area): Capture an area of a textfile between a matching start line (exclusive) and the first line matching end_line (exclusive).
 - [`velocitas_lib.create_log_file`](./velocitas_lib.md#function-create_log_file): Create a log file for the given service and runtime.
-- [`velocitas_lib.create_truncated_string`](./velocitas_lib.md#function-create_truncated_string): Create a truncated version of input if it is longer than length.
 - [`velocitas_lib.download_file`](./velocitas_lib.md#function-download_file)
 - [`velocitas_lib.get_app_manifest`](./velocitas_lib.md#function-get_app_manifest)
 - [`velocitas_lib.get_cache_data`](./velocitas_lib.md#function-get_cache_data): Return the data of the cache as Python object.
@@ -36,11 +35,7 @@
 - [`velocitas_lib.get_script_path`](./velocitas_lib.md#function-get_script_path): Return the absolute path to the directory the invoked Python script
 - [`velocitas_lib.get_valid_arch`](./velocitas_lib.md#function-get_valid_arch): Return a known architecture for the given `arch`.
 - [`velocitas_lib.get_workspace_dir`](./velocitas_lib.md#function-get_workspace_dir): Return the workspace directory.
-- [`velocitas_lib.is_uri`](./velocitas_lib.md#function-is_uri): Check if the provided path is a URI.
-- [`velocitas_lib.obtain_local_file_path`](./velocitas_lib.md#function-obtain_local_file_path): Return the absolute path to the file, specified by a absolute/relative local path or with an URI.
-- [`velocitas_lib.replace_in_file`](./velocitas_lib.md#function-replace_in_file): Replace all occurrences of text in a file with a replacement.
 - [`velocitas_lib.require_env`](./velocitas_lib.md#function-require_env): Require and return an environment variable.
-- [`velocitas_lib.to_camel_case`](./velocitas_lib.md#function-to_camel_case): Return a camel case version of a snake case string.
 - [`conan_helper.add_dependency_to_conanfile`](./velocitas_lib.conan_helper.md#function-add_dependency_to_conanfile): Add the dependency name to the project's list of dependencies.
 - [`conan_helper.export_conan_project`](./velocitas_lib.conan_helper.md#function-export_conan_project): Export a conan project to the local conan cache.
 - [`conan_helper.get_required_sdk_version`](./velocitas_lib.conan_helper.md#function-get_required_sdk_version): Return the required version of the core SDK.
@@ -56,6 +51,12 @@
 - [`services.parse_service_config`](./velocitas_lib.services.md#function-parse_service_config): Parse service spec configuration and return it as an named tuple.
 - [`services.resolve_functions`](./velocitas_lib.services.md#function-resolve_functions)
 - [`templates.copy_templates`](./velocitas_lib.templates.md#function-copy_templates): Copy templates from the template dir to the target dir.
+- [`text_helper.capture_textfile_area`](./velocitas_lib.text_helper.md#function-capture_textfile_area): Capture an area of a textfile between a matching start line (exclusive) and the first line matching end_line (exclusive).
+- [`text_helper.create_truncated_string`](./velocitas_lib.text_helper.md#function-create_truncated_string): Create a truncated version of input if it is longer than length.
+- [`text_helper.replace_in_file`](./velocitas_lib.text_helper.md#function-replace_in_file): Replace all occurrences of text in a file with a replacement.
+- [`text_helper.replace_line`](./velocitas_lib.text_helper.md#function-replace_line): Replace the whole line which matches the given text with a replacement.
+- [`text_helper.replace_text_area`](./velocitas_lib.text_helper.md#function-replace_text_area): Replace all occurrences of all text areas matching the parameters with a replacement.
+- [`text_helper.to_camel_case`](./velocitas_lib.text_helper.md#function-to_camel_case): Return a camel case version of a snake case string.
 - [`variables.json_obj_to_flat_map`](./velocitas_lib.variables.md#function-json_obj_to_flat_map): Flatten a JSON Object into a one dimensional dict by joining the keys
 
 

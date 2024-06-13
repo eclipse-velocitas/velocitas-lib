@@ -108,7 +108,7 @@ def replace_text_area(
             if start_occurence in line:
                 is_capturing = True
                 continue
-        
+
             buffer.append(line)
             continue
 
