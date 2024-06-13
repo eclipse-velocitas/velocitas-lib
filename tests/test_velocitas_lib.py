@@ -25,6 +25,7 @@ from pyfakefs.fake_filesystem import FakeFilesystem
 from velocitas_lib import (
     get_app_manifest,
     get_cache_data,
+    get_file_path,
     get_package_path,
     get_script_path,
     get_workspace_dir,
@@ -147,3 +148,42 @@ def test_get_services__overwrite_provided__returns_overwritten_services(
     assert all_services[0].config.image == "image-my-custom-service"
 
     mock_filesystem.reset()
+
+
+def test_get_file_path__absolute_local_path(set_velocitas_workspace_dir):
+    assert (
+        get_file_path("/workspaces/velocitas-lib/README.md")
+        == "/workspaces/velocitas-lib/README.md"
+    )
+
+
+def test_get_file_path__relative_local_path(set_velocitas_workspace_dir):
+    assert get_file_path("README.md") == "README.md"
+
+
+def test_get_file_path__absolute_local_path_not_available(set_velocitas_workspace_dir):
+    pytest.raises(
+        FileNotFoundError, get_file_path, "/workspaces/velocitas-lib/README2.md"
+    )
+
+
+def test_get_file_path__relative_local_path_not_available(set_velocitas_workspace_dir):
+    pytest.raises(FileNotFoundError, get_file_path, "README2.md")
+
+
+def test_get_file_path__uri(set_velocitas_workspace_dir):
+    assert (
+        get_file_path(
+            "https://raw.githubusercontent.com/eclipse-velocitas/velocitas-lib/main/README.md",
+            "/workspaces/velocitas-lib/.pytest_cache/README.md",
+        )
+        == "/workspaces/velocitas-lib/.pytest_cache/README.md"
+    )
+
+
+def test_get_file_path__uri_no_download_path(set_velocitas_workspace_dir):
+    pytest.raises(
+        ValueError,
+        get_file_path,
+        "https://raw.githubusercontent.com/eclipse-velocitas/velocitas-lib/main/README.md",
+    )

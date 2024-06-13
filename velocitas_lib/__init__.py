@@ -16,10 +16,9 @@ import json
 import os
 import sys
 import re
+import requests
 from io import TextIOWrapper
 from typing import Any, Callable, Dict, List, Optional
-
-import requests
 
 
 def to_camel_case(snake_str: str) -> str:
@@ -224,6 +223,7 @@ def download_file(uri: str, local_file_path: str) -> None:
             for chunk in infile.iter_content(chunk_size=8192):
                 outfile.write(chunk)
 
+
 def is_uri(path: str) -> bool:
     """Check if the provided path is a URI.
 
@@ -235,8 +235,10 @@ def is_uri(path: str) -> bool:
     """
     return re.match(r"(\w+)\:\/\/(\w+)", path) is not None
 
-def get_file_path(path:str, download_path:Optional[str]=None) -> str:
+
+def get_file_path(path: str, download_path: Optional[str] = None) -> str:
     """Return the absolute path to the file, specified by a absolute or relative local path or with an URI.
+    If the file is an URI, it will be downloaded to the download_path.
 
     Args:
         path (str): The path to the file.
@@ -250,6 +252,8 @@ def get_file_path(path:str, download_path:Optional[str]=None) -> str:
             return path
         elif os.path.isfile(os.path.join(get_workspace_dir(), path)):
             return os.path.join(get_workspace_dir(), path)
+        else:
+            raise FileNotFoundError(f"File {path} not found!")
 
     if download_path is None:
         raise ValueError("Download path is required for URI")
