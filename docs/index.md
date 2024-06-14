@@ -36,6 +36,8 @@
 - [`velocitas_lib.get_script_path`](./velocitas_lib.md#function-get_script_path): Return the absolute path to the directory the invoked Python script
 - [`velocitas_lib.get_valid_arch`](./velocitas_lib.md#function-get_valid_arch): Return a known architecture for the given `arch`.
 - [`velocitas_lib.get_workspace_dir`](./velocitas_lib.md#function-get_workspace_dir): Return the workspace directory.
+- [`velocitas_lib.is_uri`](./velocitas_lib.md#function-is_uri): Check if the provided path is a URI.
+- [`velocitas_lib.obtain_local_file_path`](./velocitas_lib.md#function-obtain_local_file_path): Return the absolute path to the file, specified by a absolute/relative local path or with an URI.
 - [`velocitas_lib.replace_in_file`](./velocitas_lib.md#function-replace_in_file): Replace all occurrences of text in a file with a replacement.
 - [`velocitas_lib.require_env`](./velocitas_lib.md#function-require_env): Require and return an environment variable.
 - [`velocitas_lib.to_camel_case`](./velocitas_lib.md#function-to_camel_case): Return a camel case version of a snake case string.

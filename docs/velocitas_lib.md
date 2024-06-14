@@ -335,6 +335,60 @@ download_file(uri: str, local_file_path: str) → None
 
 
 
+---
+
+<a href="../velocitas_lib/__init__.py#L227"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+
+## <kbd>function</kbd> `is_uri`
+
+```python
+is_uri(path: str) → bool
+```
+
+Check if the provided path is a URI. 
+
+
+
+**Args:**
+ 
+ - <b>`path`</b> (str):  The path to check. 
+
+
+
+**Returns:**
+ 
+ - <b>`bool`</b>:  True if the path is a URI. False otherwise. 
+
+
+---
+
+<a href="../velocitas_lib/__init__.py#L239"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+
+## <kbd>function</kbd> `obtain_local_file_path`
+
+```python
+obtain_local_file_path(
+    path_or_uri: str,
+    download_path: Optional[str] = None
+) → str
+```
+
+Return the absolute path to the file, specified by a absolute/relative local path or with an URI. 
+
+
+
+**Args:**
+ 
+ - <b>`path_or_uri`</b> (str):  Absolute/relative local path or URI. 
+ - <b>`download_path`</b> (str):  The path to download the file. 
+
+
+
+**Returns:**
+ 
+ - <b>`str`</b>:  The absolute path to the file. 
+
+
 
 
 ---

@@ -15,10 +15,10 @@
 import json
 import os
 import sys
+import re
+import requests
 from io import TextIOWrapper
 from typing import Any, Callable, Dict, List, Optional
-
-import requests
 
 
 def to_camel_case(snake_str: str) -> str:
@@ -222,3 +222,50 @@ def download_file(uri: str, local_file_path: str) -> None:
         with open(local_file_path, "wb") as outfile:
             for chunk in infile.iter_content(chunk_size=8192):
                 outfile.write(chunk)
+
+
+def is_uri(path: str) -> bool:
+    """Check if the provided path is a URI.
+
+    Args:
+        path (str): The path to check.
+
+    Returns:
+        bool: True if the path is a URI. False otherwise.
+    """
+    return re.match(r"(\w+)\:\/\/(\w+)", path) is not None
+
+
+def obtain_local_file_path(
+    path_or_uri: str, download_path: Optional[str] = None
+) -> str:
+    """Return the absolute path to the file, specified by a absolute/relative local path or with an URI.
+
+    Args:
+        path_or_uri (str): Absolute/relative local path or URI.
+        download_path (str): The path to download the file.
+
+    Returns:
+        str: The absolute path to the file.
+    """
+    if not is_uri(path_or_uri):
+        if os.path.isfile(path_or_uri):
+            return path_or_uri
+        elif os.path.isfile(os.path.join(get_workspace_dir(), path_or_uri)):
+            return os.path.join(get_workspace_dir(), path_or_uri)
+        else:
+            raise FileNotFoundError(f"File {path_or_uri} not found!")
+
+    if download_path is None:
+        download_path = os.path.join(
+            get_project_cache_dir(), "downloads", path_or_uri.split("/")[-1]
+        )
+    if os.path.isfile(download_path):
+        path, file = os.path.split(download_path)
+        parts = file.split(".", 1)
+        filename = f"{parts[0]}_1.{parts[1]}" if len(parts) > 1 else f"{parts[0]}_1"
+
+        download_path = os.path.join(path, filename)
+
+    download_file(path_or_uri, download_path)
+    return download_path
