@@ -263,7 +263,9 @@ def obtain_local_file_path(
     if os.path.isfile(download_path):
         path, file = os.path.split(download_path)
         parts = file.split(".", 1)
-        download_path = os.path.join(path, f"{parts[0]}_1.{parts[1]}")
+        filename = f"{parts[0]}_1.{parts[1]}" if len(parts) > 1 else f"{parts[0]}_1"
+
+        download_path = os.path.join(path, filename)
 
     download_file(path_or_uri, download_path)
     return download_path
