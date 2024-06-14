@@ -236,27 +236,34 @@ def is_uri(path: str) -> bool:
     return re.match(r"(\w+)\:\/\/(\w+)", path) is not None
 
 
-def get_file_path(path: str, download_path: Optional[str] = None) -> str:
-    """Return the absolute path to the file, specified by a absolute or relative local path or with an URI.
-    If the file is an URI, it will be downloaded to the download_path.
+def obtain_local_file_path(
+    path_or_uri: str, download_path: Optional[str] = None
+) -> str:
+    """Return the absolute path to the file, specified by a absolute/relative local path or with an URI.
 
     Args:
-        path (str): The path to the file.
+        path_or_uri (str): Absolute/relative local path or URI.
         download_path (str): The path to download the file.
 
     Returns:
         str: The absolute path to the file.
     """
-    if not is_uri(path):
-        if os.path.isfile(path):
-            return path
-        elif os.path.isfile(os.path.join(get_workspace_dir(), path)):
-            return os.path.join(get_workspace_dir(), path)
+    if not is_uri(path_or_uri):
+        if os.path.isfile(path_or_uri):
+            return path_or_uri
+        elif os.path.isfile(os.path.join(get_workspace_dir(), path_or_uri)):
+            return os.path.join(get_workspace_dir(), path_or_uri)
         else:
-            raise FileNotFoundError(f"File {path} not found!")
+            raise FileNotFoundError(f"File {path_or_uri} not found!")
 
     if download_path is None:
-        raise ValueError("Download path is required for URI")
+        download_path = os.path.join(
+            get_project_cache_dir(), "downloads", path_or_uri.split("/")[-1]
+        )
+    if os.path.isfile(download_path):
+        path, file = os.path.split(download_path)
+        parts = file.split(".", 1)
+        download_path = os.path.join(path, f"{parts[0]}_1.{parts[1]}")
 
-    download_file(path, download_path)
+    download_file(path_or_uri, download_path)
     return download_path

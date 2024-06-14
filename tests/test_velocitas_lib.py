@@ -25,11 +25,12 @@ from pyfakefs.fake_filesystem import FakeFilesystem
 from velocitas_lib import (
     get_app_manifest,
     get_cache_data,
-    get_file_path,
+    obtain_local_file_path,
     get_package_path,
     get_script_path,
     get_workspace_dir,
     require_env,
+    get_project_cache_dir,
 )
 from velocitas_lib.services import get_services
 
@@ -44,6 +45,18 @@ def set_test_env_var() -> str:
 def set_velocitas_workspace_dir() -> str:
     os.environ["VELOCITAS_WORKSPACE_DIR"] = "/test/vehicle-app-workspace"
     return os.environ["VELOCITAS_WORKSPACE_DIR"]
+
+
+@pytest.fixture()
+def set_velocitas_package_dir() -> str:
+    os.environ["VELOCITAS_PACKAGE_DIR"] = "./tests/package"
+    return os.environ["VELOCITAS_PACKAGE_DIR"]
+
+
+@pytest.fixture()
+def set_velocitas_cache_dir() -> str:
+    os.environ["VELOCITAS_CACHE_DIR"] = "/test/cache"
+    return os.environ["VELOCITAS_CACHE_DIR"]
 
 
 @pytest.fixture()
@@ -102,7 +115,7 @@ def test_get_script_path__returns_script_path():
     assert get_script_path() == os.path.dirname(os.path.realpath(sys.argv[0]))
 
 
-def test_get_package_path__returns_package_path():
+def test_get_package_path__returns_package_path(set_velocitas_package_dir):
     assert get_package_path() == "./tests/package"
 
 
@@ -112,6 +125,7 @@ def test_get_cache_data__returns_cache_data(set_velocitas_cache_data):  # type: 
 
 
 def test_get_services__no_overwrite_provided__returns_default_services(
+    set_velocitas_package_dir,
     mock_filesystem: FakeFilesystem,
 ):
     os.environ["runtimeFilePath"] = "runtime.json"
@@ -128,6 +142,7 @@ def test_get_services__no_overwrite_provided__returns_default_services(
 
 
 def test_get_services__overwrite_provided__returns_overwritten_services(
+    set_velocitas_package_dir,
     mock_filesystem: FakeFilesystem,
 ):
     os.environ["runtimeFilePath"] = "runtime.json"
@@ -150,38 +165,50 @@ def test_get_services__overwrite_provided__returns_overwritten_services(
     mock_filesystem.reset()
 
 
-def test_get_file_path__absolute_local_path(set_velocitas_workspace_dir):
+def test_obtain_local_file_path__absolute_local_path(set_velocitas_workspace_dir):
     root = os.path.dirname(os.path.dirname(os.path.realpath(__file__)))
-    assert get_file_path(f"{root}/README.md") == f"{root}/README.md"
+    assert obtain_local_file_path(f"{root}/README.md") == f"{root}/README.md"
 
 
-def test_get_file_path__relative_local_path(set_velocitas_workspace_dir):
-    assert get_file_path("README.md") == "README.md"
+def test_obtain_local_file_path__relative_local_path(set_velocitas_workspace_dir):
+    assert obtain_local_file_path("README.md") == "README.md"
 
 
-def test_get_file_path__absolute_local_path_not_available(set_velocitas_workspace_dir):
+def test_obtain_local_file_path__absolute_local_path_not_available(
+    set_velocitas_workspace_dir,
+):
     pytest.raises(
-        FileNotFoundError, get_file_path, "/workspaces/velocitas-lib/README2.md"
+        FileNotFoundError,
+        obtain_local_file_path,
+        "/workspaces/velocitas-lib/README2.md",
     )
 
 
-def test_get_file_path__relative_local_path_not_available(set_velocitas_workspace_dir):
-    pytest.raises(FileNotFoundError, get_file_path, "README2.md")
+def test_obtain_local_file_path__relative_local_path_not_available(
+    set_velocitas_workspace_dir,
+):
+    pytest.raises(FileNotFoundError, obtain_local_file_path, "README2.md")
 
 
-def test_get_file_path__uri(set_velocitas_workspace_dir):
+def test_obtain_local_file_path__uri(set_velocitas_workspace_dir):
     assert (
-        get_file_path(
+        obtain_local_file_path(
             "https://raw.githubusercontent.com/eclipse-velocitas/velocitas-lib/main/README.md",
             "/workspaces/velocitas-lib/.pytest_cache/README.md",
         )
         == "/workspaces/velocitas-lib/.pytest_cache/README.md"
     )
+    Path.unlink(Path("/workspaces/velocitas-lib/.pytest_cache/README.md"))
 
 
-def test_get_file_path__uri_no_download_path(set_velocitas_workspace_dir):
-    pytest.raises(
-        ValueError,
-        get_file_path,
-        "https://raw.githubusercontent.com/eclipse-velocitas/velocitas-lib/main/README.md",
+def test_obtain_local_file_path__uri_no_download_path(
+    set_velocitas_cache_dir,
+    mock_filesystem: FakeFilesystem,
+):
+    mock_filesystem.create_dir(get_project_cache_dir())
+    assert (
+        obtain_local_file_path(
+            "https://raw.githubusercontent.com/eclipse-velocitas/velocitas-lib/main/README.md"
+        )
+        == "/test/cache/downloads/README.md"
     )
