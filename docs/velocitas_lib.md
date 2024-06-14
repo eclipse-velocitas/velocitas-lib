@@ -364,19 +364,22 @@ Check if the provided path is a URI.
 
 <a href="../velocitas_lib/__init__.py#L239"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
-## <kbd>function</kbd> `get_file_path`
+## <kbd>function</kbd> `obtain_local_file_path`
 
 ```python
-get_file_path(path: str, download_path: Optional[str] = None) → str
+obtain_local_file_path(
+    path_or_uri: str,
+    download_path: Optional[str] = None
+) → str
 ```
 
-Return the absolute path to the file, specified by a absolute or relative local path or with an URI. If the file is an URI, it will be downloaded to the download_path. 
+Return the absolute path to the file, specified by a absolute/relative local path or with an URI. 
 
 
 
 **Args:**
  
- - <b>`path`</b> (str):  The path to the file. 
+ - <b>`path_or_uri`</b> (str):  Absolute/relative local path or URI. 
  - <b>`download_path`</b> (str):  The path to download the file. 
 
 

@@ -29,7 +29,6 @@
 - [`velocitas_lib.download_file`](./velocitas_lib.md#function-download_file)
 - [`velocitas_lib.get_app_manifest`](./velocitas_lib.md#function-get_app_manifest)
 - [`velocitas_lib.get_cache_data`](./velocitas_lib.md#function-get_cache_data): Return the data of the cache as Python object.
-- [`velocitas_lib.get_file_path`](./velocitas_lib.md#function-get_file_path): Return the absolute path to the file, specified by a absolute or relative local path or with an URI.
 - [`velocitas_lib.get_log_file_name`](./velocitas_lib.md#function-get_log_file_name): Build the log file name for the given service and runtime.
 - [`velocitas_lib.get_package_path`](./velocitas_lib.md#function-get_package_path): Return the absolute path to the package directory the invoked Python
 - [`velocitas_lib.get_programming_language`](./velocitas_lib.md#function-get_programming_language): Return the programming language of the project.
@@ -38,6 +37,7 @@
 - [`velocitas_lib.get_valid_arch`](./velocitas_lib.md#function-get_valid_arch): Return a known architecture for the given `arch`.
 - [`velocitas_lib.get_workspace_dir`](./velocitas_lib.md#function-get_workspace_dir): Return the workspace directory.
 - [`velocitas_lib.is_uri`](./velocitas_lib.md#function-is_uri): Check if the provided path is a URI.
+- [`velocitas_lib.obtain_local_file_path`](./velocitas_lib.md#function-obtain_local_file_path): Return the absolute path to the file, specified by a absolute/relative local path or with an URI.
 - [`velocitas_lib.replace_in_file`](./velocitas_lib.md#function-replace_in_file): Replace all occurrences of text in a file with a replacement.
 - [`velocitas_lib.require_env`](./velocitas_lib.md#function-require_env): Require and return an environment variable.
 - [`velocitas_lib.to_camel_case`](./velocitas_lib.md#function-to_camel_case): Return a camel case version of a snake case string.
