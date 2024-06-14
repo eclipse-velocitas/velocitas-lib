@@ -46,7 +46,7 @@ def create_truncated_string(input: str, length: int) -> str:
     return f"...{input[-length+3:]}"  # noqa: E226 intended behaviour
 
 
-def replace_in_file(file_path: str, text: str, replacement: str) -> None:
+def replace_text_in_file(file_path: str, text: str, replacement: str) -> None:
     """Replace all occurrences of text in a file with a replacement.
 
     Args:
@@ -54,33 +54,35 @@ def replace_in_file(file_path: str, text: str, replacement: str) -> None:
         text (str): The text to find.
         replacement (str): The replacement for text.
     """
-    buffer = []
-    for line in open(file_path, encoding="utf-8"):
-        buffer.append(line.replace(text, replacement))
 
     with open(file_path, mode="w", encoding="utf-8") as file:
-        for line in buffer:
-            file.write(line)
+        file_text = file.readlines()
+        replaced_text_list = replace_item_in_list(file_text, text, replacement)
+        replaced_text = "".join(replaced_text_list)
+        file.write(replaced_text)
 
 
-def replace_line(
-    text: List[str], matching_text: str, replacement: str = ""
+def replace_item_in_list(
+    text: List[str],
+    matching_text: str,
+    replacement: str = "",
+    remove_empty: bool = False,
 ) -> List[str]:
     """Replace the whole line which matches the given text with a replacement.
-    If replacement for a line is empty, the line will be removed.
 
     Args:
         text (List[str]): All text lines to replace lines within.
         text (str): The text to find the line with.
         replacement (str): The replacement for line.
+        remove_empty (bool): If true and the replacement for a line is empty, the line will be removed.
     """
     buffer: List[str] = []
     for line in text:
         if matching_text in line:
             line = replacement
 
-            isEmptyLine = line == ""
-            if isEmptyLine:
+            is_removing_empty_line = remove_empty and line == ""
+            if is_removing_empty_line:
                 continue
 
         buffer.append(line)
@@ -121,7 +123,7 @@ def replace_text_area(
     return buffer
 
 
-def capture_textfile_area(
+def capture_area_in_file(
     file: TextIOWrapper,
     start_line: str,
     end_line: str,

@@ -18,7 +18,7 @@ import sys
 import re
 import requests
 from io import TextIOWrapper
-from typing import Any, Dict
+from typing import Any, Dict, Optional
 
 
 def get_valid_arch(arch: str) -> str:
