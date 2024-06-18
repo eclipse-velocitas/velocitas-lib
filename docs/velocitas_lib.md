@@ -232,7 +232,7 @@ download_file(uri: str, local_file_path: str) → None
 
 ---
 
-<a href="../velocitas_lib/__init__.py#L227"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="../velocitas_lib/__init__.py#L146"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ## <kbd>function</kbd> `is_uri`
 
@@ -257,7 +257,7 @@ Check if the provided path is a URI.
 
 ---
 
-<a href="../velocitas_lib/__init__.py#L239"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="../velocitas_lib/__init__.py#L158"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ## <kbd>function</kbd> `obtain_local_file_path`
 

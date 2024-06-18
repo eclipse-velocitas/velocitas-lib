@@ -35,6 +35,8 @@
 - [`velocitas_lib.get_script_path`](./velocitas_lib.md#function-get_script_path): Return the absolute path to the directory the invoked Python script
 - [`velocitas_lib.get_valid_arch`](./velocitas_lib.md#function-get_valid_arch): Return a known architecture for the given `arch`.
 - [`velocitas_lib.get_workspace_dir`](./velocitas_lib.md#function-get_workspace_dir): Return the workspace directory.
+- [`velocitas_lib.is_uri`](./velocitas_lib.md#function-is_uri): Check if the provided path is a URI.
+- [`velocitas_lib.obtain_local_file_path`](./velocitas_lib.md#function-obtain_local_file_path): Return the absolute path to the file, specified by a absolute/relative local path or with an URI.
 - [`velocitas_lib.require_env`](./velocitas_lib.md#function-require_env): Require and return an environment variable.
 - [`conan_utils.add_dependency_to_conanfile`](./velocitas_lib.conan_utils.md#function-add_dependency_to_conanfile): Add the dependency name to the project's list of dependencies.
 - [`conan_utils.export_conan_project`](./velocitas_lib.conan_utils.md#function-export_conan_project): Export a conan project to the local conan cache.
