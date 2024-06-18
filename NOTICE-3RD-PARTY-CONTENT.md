@@ -4,7 +4,7 @@
 | Dependency | Version | License |
 |:-----------|:-------:|--------:|
 |types-requests|2.32.0.20240602|Apache 2.0|
-|urllib3|2.2.1|MIT|
+|urllib3|2.2.2|MIT|
 ## Workflows
 | Dependency | Version | License |
 |:-----------|:-------:|--------:|
