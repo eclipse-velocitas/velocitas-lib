@@ -59,7 +59,10 @@ def replace_text_in_file(file_path: str, text: str, replacement: str) -> None:
         file_text = file.readlines()
         replaced_text_list = replace_item_in_list(file_text, text, replacement)
         replaced_text = "".join(replaced_text_list)
+        # replace old content
+        file.seek(0)
         file.write(replaced_text)
+        file.truncate()
 
 
 def replace_item_in_list(
