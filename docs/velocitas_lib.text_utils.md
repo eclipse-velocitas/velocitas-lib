@@ -82,7 +82,7 @@ Replace all occurrences of text in a file with a replacement.
 
 ---
 
-<a href="../velocitas_lib/text_utils.py#L65"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="../velocitas_lib/text_utils.py#L68"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ## <kbd>function</kbd> `replace_item_in_list`
 
@@ -109,7 +109,7 @@ Replace the whole line which matches the given text with a replacement.
 
 ---
 
-<a href="../velocitas_lib/text_utils.py#L93"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="../velocitas_lib/text_utils.py#L96"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ## <kbd>function</kbd> `replace_text_area`
 
@@ -136,7 +136,7 @@ Replace all occurrences of all text areas matching the parameters with a replace
 
 ---
 
-<a href="../velocitas_lib/text_utils.py#L126"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="../velocitas_lib/text_utils.py#L129"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ## <kbd>function</kbd> `capture_area_in_file`
 
