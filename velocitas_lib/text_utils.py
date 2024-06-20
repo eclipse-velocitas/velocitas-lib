@@ -55,7 +55,7 @@ def replace_text_in_file(file_path: str, text: str, replacement: str) -> None:
         replacement (str): The replacement for text.
     """
 
-    with open(file_path, mode="w", encoding="utf-8") as file:
+    with open(file_path, mode="r+", encoding="utf-8") as file:
         file_text = file.readlines()
         replaced_text_list = replace_item_in_list(file_text, text, replacement)
         replaced_text = "".join(replaced_text_list)
