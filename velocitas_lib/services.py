@@ -25,6 +25,7 @@ from velocitas_lib.variables import ProjectVariables
 class ServiceSpecConfig(NamedTuple):
     image: str
     is_enabled: bool = True
+    is_runnable: bool = True
     env_vars: Dict[str, Optional[str]] = dict()
     args: List[str] = list()
     ports: List[str] = list()
@@ -103,6 +104,8 @@ def parse_service_config(
 
         if key == "enabled":
             is_enabled = value is True or value == "true"
+        if key == "runnable":
+            is_runnable = value is True or value == "true"
         elif key == "image":
             container_image = value
         elif key == "env":
@@ -128,6 +131,7 @@ def parse_service_config(
     return ServiceSpecConfig(
         image=container_image,
         is_enabled=is_enabled,
+        is_runnable=is_runnable,
         env_vars=env_vars,
         args=args,
         ports=ports,
@@ -137,7 +141,7 @@ def parse_service_config(
     )
 
 
-def get_services(verbose: bool = True) -> List[Service]:
+def get_services(verbose: bool = True, get_runnable: bool = False) -> List[Service]:
     """Return all specified services as Python object."""
     path = Path(f"{get_package_path()}/runtime.json")
     variable_value = require_env("runtimeFilePath")
@@ -168,11 +172,15 @@ def get_services(verbose: bool = True) -> List[Service]:
         if "config" in service_json:
             service_config = parse_service_config(service_id, service_json["config"])
             is_service_enabled = service_config.is_enabled
+            is_service_runnable = service_config.is_runnable
 
         if is_service_enabled:
             if service_config is None:
                 raise KeyError(f"Service {service_id!r} does not have a config entry!")
 
+            services.append(Service(service_id, service_config))
+
+        if get_runnable and is_service_runnable:
             services.append(Service(service_id, service_config))
 
     return services
@@ -184,7 +192,7 @@ def get_specific_service(service_id: str) -> Service:
     Args:
         service_id: The ID of the service to be parsed.
     """
-    services = get_services()
+    services = get_services(get_runnable=True)
     services = list(filter(lambda service: service.id == service_id, services))
     if len(services) == 0:
         raise RuntimeError(f"Service with id '{service_id}' not defined")
