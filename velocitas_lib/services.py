@@ -186,13 +186,13 @@ def get_services(verbose: bool = True, get_runnable: bool = False) -> List[Servi
     return services
 
 
-def get_specific_service(service_id: str) -> Service:
+def get_specific_service(service_id: str, get_runnable: bool = False) -> Service:
     """Return the specified service as Python object.
 
     Args:
         service_id: The ID of the service to be parsed.
     """
-    services = get_services(get_runnable=True)
+    services = get_services(get_runnable=get_runnable)
     services = list(filter(lambda service: service.id == service_id, services))
     if len(services) == 0:
         raise RuntimeError(f"Service with id '{service_id}' not defined")
