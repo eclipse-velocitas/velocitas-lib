@@ -84,6 +84,7 @@ def parse_service_config(
     """
 
     is_enabled = True
+    is_runnable = True
     container_image = None
     env_vars = dict[str, Optional[str]]()
     ports = []
