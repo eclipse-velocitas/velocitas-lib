@@ -109,12 +109,13 @@ def replace_text_area(
     is_capturing = False
 
     for line in text:
+        occurence_count = line.count(start_occurence)
         if not is_capturing:
-            if start_occurence in line:
+            if occurence_count == 0:
+                buffer.append(line)
+            elif occurence_count == 1:
                 is_capturing = True
-                continue
 
-            buffer.append(line)
             continue
 
         if end_occurence in line:
