@@ -31,7 +31,7 @@ class SeatsServiceStub(seats_service_sdk.seats_pb2_grpc.SeatsServicer):
         ''' Set the desired seat position
 
         Returns gRPC status codes:
-        * OK - Seat movement started
+        * OK - Seat movement started - OK
         * OUT_OF_RANGE - The addressed seat is not present in this vehicle
         * INVALID_ARGUMENT - At least one of the requested component positions is invalid
         * INTERNAL - A seat service internal error happened - see error message for details
@@ -96,3 +96,13 @@ def test_replace_text_area__no_replacement_given__removes_lines():
     )
 
     assert len(replaced_text) == 10
+
+
+def test_replace_text_area__same_line_occurence__no_replacement_given__removes_lines():
+    replaced_text = replace_text_area(
+        test_text,
+        "OK",
+        "OK",
+    )
+
+    assert len(replaced_text) == 23

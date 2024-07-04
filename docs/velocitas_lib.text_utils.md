@@ -136,7 +136,7 @@ Replace all occurrences of all text areas matching the parameters with a replace
 
 ---
 
-<a href="../velocitas_lib/text_utils.py#L129"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="../velocitas_lib/text_utils.py#L130"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ## <kbd>function</kbd> `capture_area_in_file`
 
