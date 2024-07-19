@@ -15,7 +15,7 @@
 ## <kbd>function</kbd> `get_required_sdk_version`
 
 ```python
-get_required_sdk_version() → Union[str, NoneType]
+get_required_sdk_version() → Optional[str]
 ```
 
 Return the required version of the core SDK. 
