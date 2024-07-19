@@ -221,7 +221,7 @@ def discover_files_in_filetree(
     file_type: str
 ) -> List[str]:
     """
-    Recursively search for .proto files under the specified tree root.
+    Recursively search for files with a specific file type under the tree root.
 
     Args:
         tree_root (str): The path to the tree root to search from.
