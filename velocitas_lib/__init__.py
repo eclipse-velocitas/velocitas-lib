@@ -18,7 +18,7 @@ import sys
 import re
 import zipfile
 from io import TextIOWrapper
-from typing import Any, Callable, Dict, List, Optional
+from typing import Any, Dict, List, Optional
 
 import requests
 
@@ -212,12 +212,9 @@ def extract_zip(file_path: str, extract_to: str) -> str:
         return extract_to
     else:
         raise RuntimeError(f"{file_path!r} is not a zip file!")
-    
 
-def discover_files_in_filetree(
-    tree_root: str,
-    file_type: str
-) -> List[str]:
+
+def discover_files_in_filetree(tree_root: str, file_type: str) -> List[str]:
     """
     Recursively search for files with a specific file type under the tree root.
 
