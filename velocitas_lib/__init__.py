@@ -214,3 +214,25 @@ def extract_zip(file_path: str, extract_to: str) -> str:
         return extract_to
     else:
         raise RuntimeError(f"{file_path!r} is not a zip file!")
+    
+
+def discover_files_in_filetree(
+    tree_root: str,
+    file_type: str
+) -> List[str]:
+    """
+    Recursively search for .proto files under the specified tree root.
+
+    Args:
+        tree_root (str): The path to the tree root to search from.
+        file_type (str): The file type that is searched for.
+
+    Returns:
+        List[str]: A list of file paths, relative to the search tree root.
+    """
+    files = []
+    for dir, _, potential_files in os.walk(tree_root):
+        for file in potential_files:
+            if file.endswith(file_type):
+                files.append(os.path.join(dir, file))
+    return files
