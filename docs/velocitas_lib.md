@@ -10,7 +10,7 @@
 
 ---
 
-<a href="../velocitas_lib/__init__.py#L24"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="../velocitas_lib/__init__.py#L26"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ## <kbd>function</kbd> `get_valid_arch`
 
@@ -35,7 +35,7 @@ Return a known architecture for the given `arch`.
 
 ---
 
-<a href="../velocitas_lib/__init__.py#L41"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="../velocitas_lib/__init__.py#L43"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ## <kbd>function</kbd> `require_env`
 
@@ -66,7 +66,7 @@ Require and return an environment variable.
 
 ---
 
-<a href="../velocitas_lib/__init__.py#L59"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="../velocitas_lib/__init__.py#L61"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ## <kbd>function</kbd> `get_workspace_dir`
 
@@ -79,7 +79,7 @@ Return the workspace directory.
 
 ---
 
-<a href="../velocitas_lib/__init__.py#L64"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="../velocitas_lib/__init__.py#L66"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ## <kbd>function</kbd> `get_app_manifest`
 
@@ -94,7 +94,7 @@ get_app_manifest() → Dict[str, Any]
 
 ---
 
-<a href="../velocitas_lib/__init__.py#L74"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="../velocitas_lib/__init__.py#L76"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ## <kbd>function</kbd> `get_script_path`
 
@@ -107,7 +107,7 @@ Return the absolute path to the directory the invoked Python script is located i
 
 ---
 
-<a href="../velocitas_lib/__init__.py#L80"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="../velocitas_lib/__init__.py#L82"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ## <kbd>function</kbd> `get_package_path`
 
@@ -120,7 +120,7 @@ Return the absolute path to the package directory the invoked Python script belo
 
 ---
 
-<a href="../velocitas_lib/__init__.py#L86"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="../velocitas_lib/__init__.py#L88"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ## <kbd>function</kbd> `get_project_cache_dir`
 
@@ -139,7 +139,7 @@ Return the project's cache directory.
 
 ---
 
-<a href="../velocitas_lib/__init__.py#L95"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="../velocitas_lib/__init__.py#L97"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ## <kbd>function</kbd> `get_cache_data`
 
@@ -152,7 +152,7 @@ Return the data of the cache as Python object.
 
 ---
 
-<a href="../velocitas_lib/__init__.py#L105"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="../velocitas_lib/__init__.py#L107"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ## <kbd>function</kbd> `get_log_file_name`
 
@@ -178,7 +178,7 @@ Build the log file name for the given service and runtime.
 
 ---
 
-<a href="../velocitas_lib/__init__.py#L118"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="../velocitas_lib/__init__.py#L120"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ## <kbd>function</kbd> `get_programming_language`
 
@@ -191,7 +191,7 @@ Return the programming language of the project.
 
 ---
 
-<a href="../velocitas_lib/__init__.py#L123"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="../velocitas_lib/__init__.py#L125"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ## <kbd>function</kbd> `create_log_file`
 
@@ -217,7 +217,7 @@ Create a log file for the given service and runtime.
 
 ---
 
-<a href="../velocitas_lib/__init__.py#L138"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="../velocitas_lib/__init__.py#L140"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ## <kbd>function</kbd> `download_file`
 
@@ -232,7 +232,7 @@ download_file(uri: str, local_file_path: str) → None
 
 ---
 
-<a href="../velocitas_lib/__init__.py#L146"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="../velocitas_lib/__init__.py#L148"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ## <kbd>function</kbd> `is_uri`
 
@@ -257,7 +257,7 @@ Check if the provided path is a URI.
 
 ---
 
-<a href="../velocitas_lib/__init__.py#L158"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="../velocitas_lib/__init__.py#L160"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ## <kbd>function</kbd> `obtain_local_file_path`
 
@@ -282,6 +282,63 @@ Return the absolute path to the file, specified by a absolute/relative local pat
 **Returns:**
  
  - <b>`str`</b>:  The absolute path to the file. 
+
+
+---
+
+<a href="../velocitas_lib/__init__.py#L195"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+
+## <kbd>function</kbd> `extract_zip`
+
+```python
+extract_zip(file_path: str, extract_to: str) → str
+```
+
+Extract a zip file. 
+
+
+
+**Args:**
+ 
+ - <b>`file_path`</b> (str):  The file path to the zip. 
+ - <b>`extract_to`</b> (str):  The file path to extract to. 
+
+
+
+**Raises:**
+ RuntimeError if the file_path is not a zip. 
+
+
+
+**Returns:**
+ 
+ - <b>`str`</b>:  The file path to the extracted top level folder. 
+
+
+---
+
+<a href="../velocitas_lib/__init__.py#L217"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+
+## <kbd>function</kbd> `discover_files_in_filetree`
+
+```python
+discover_files_in_filetree(tree_root: str, file_type: str) → List[str]
+```
+
+Recursively search for files with a specific file type under the tree root. 
+
+
+
+**Args:**
+ 
+ - <b>`tree_root`</b> (str):  The path to the tree root to search from. 
+ - <b>`file_type`</b> (str):  The file type that is searched for. 
+
+
+
+**Returns:**
+ 
+ - <b>`List[str]`</b>:  A list of file paths, relative to the search tree root. 
 
 
 
