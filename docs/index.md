@@ -25,7 +25,9 @@
 ## Functions
 
 - [`velocitas_lib.create_log_file`](./velocitas_lib.md#function-create_log_file): Create a log file for the given service and runtime.
+- [`velocitas_lib.discover_files_in_filetree`](./velocitas_lib.md#function-discover_files_in_filetree): Recursively search for files with a specific file type under the tree root.
 - [`velocitas_lib.download_file`](./velocitas_lib.md#function-download_file)
+- [`velocitas_lib.extract_zip`](./velocitas_lib.md#function-extract_zip): Extract a zip file.
 - [`velocitas_lib.get_app_manifest`](./velocitas_lib.md#function-get_app_manifest)
 - [`velocitas_lib.get_cache_data`](./velocitas_lib.md#function-get_cache_data): Return the data of the cache as Python object.
 - [`velocitas_lib.get_log_file_name`](./velocitas_lib.md#function-get_log_file_name): Build the log file name for the given service and runtime.

@@ -16,9 +16,11 @@ import json
 import os
 import sys
 import re
-import requests
+import zipfile
 from io import TextIOWrapper
-from typing import Any, Dict, Optional
+from typing import Any, Dict, List, Optional
+
+import requests
 
 
 def get_valid_arch(arch: str) -> str:
@@ -188,3 +190,44 @@ def obtain_local_file_path(
 
     download_file(path_or_uri, download_path)
     return download_path
+
+
+def extract_zip(file_path: str, extract_to: str) -> str:
+    """Extract a zip file.
+
+    Args:
+        file_path (str): The file path to the zip.
+        extract_to (str): The file path to extract to.
+
+    Raises:
+        RuntimeError if the file_path is not a zip.
+
+    Returns:
+        str: The file path to the extracted top level folder.
+    """
+    if zipfile.is_zipfile(file_path):
+        with zipfile.ZipFile(file_path, "r") as zip_ref:
+            zip_ref.extractall(extract_to)
+
+        return extract_to
+    else:
+        raise RuntimeError(f"{file_path!r} is not a zip file!")
+
+
+def discover_files_in_filetree(tree_root: str, file_type: str) -> List[str]:
+    """
+    Recursively search for files with a specific file type under the tree root.
+
+    Args:
+        tree_root (str): The path to the tree root to search from.
+        file_type (str): The file type that is searched for.
+
+    Returns:
+        List[str]: A list of file paths, relative to the search tree root.
+    """
+    files = []
+    for dir, _, potential_files in os.walk(tree_root):
+        for file in potential_files:
+            if file.endswith(file_type):
+                files.append(os.path.join(dir, file))
+    return files
