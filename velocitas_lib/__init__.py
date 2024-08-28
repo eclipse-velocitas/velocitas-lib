@@ -14,8 +14,8 @@
 
 import json
 import os
-import sys
 import re
+import sys
 import zipfile
 from io import TextIOWrapper
 from typing import Any, Dict, List, Optional
@@ -157,6 +157,14 @@ def is_uri(path: str) -> bool:
     return re.match(r"(\w+)\:\/\/(\w+)", path) is not None
 
 
+def have_internet_connection() -> bool:
+    try:
+        requests.head("http://www.google.com/", timeout=5)
+        return True
+    except requests.ConnectionError:
+        return False
+
+
 def obtain_local_file_path(
     path_or_uri: str, download_path: Optional[str] = None
 ) -> str:
@@ -181,14 +189,14 @@ def obtain_local_file_path(
         download_path = os.path.join(
             get_project_cache_dir(), "downloads", path_or_uri.split("/")[-1]
         )
-    if os.path.isfile(download_path):
-        path, file = os.path.split(download_path)
-        parts = file.split(".", 1)
-        filename = f"{parts[0]}_1.{parts[1]}" if len(parts) > 1 else f"{parts[0]}_1"
 
-        download_path = os.path.join(path, filename)
+    try:
+        download_file(path_or_uri, download_path)
+    except requests.ConnectionError:
+        if have_internet_connection() or not os.path.exists(download_path):
+            raise
+        print(f"[WARING] No internet connection -> using cached file {download_path}")
 
-    download_file(path_or_uri, download_path)
     return download_path
 
 
