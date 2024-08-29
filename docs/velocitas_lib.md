@@ -259,6 +259,21 @@ Check if the provided path is a URI.
 
 <a href="../velocitas_lib/__init__.py#L160"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
+## <kbd>function</kbd> `have_internet_connection`
+
+```python
+have_internet_connection() → bool
+```
+
+
+
+
+
+
+---
+
+<a href="../velocitas_lib/__init__.py#L168"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+
 ## <kbd>function</kbd> `obtain_local_file_path`
 
 ```python
@@ -286,7 +301,7 @@ Return the absolute path to the file, specified by a absolute/relative local pat
 
 ---
 
-<a href="../velocitas_lib/__init__.py#L195"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="../velocitas_lib/__init__.py#L203"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ## <kbd>function</kbd> `extract_zip`
 
@@ -317,7 +332,7 @@ Extract a zip file.
 
 ---
 
-<a href="../velocitas_lib/__init__.py#L217"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+<a href="../velocitas_lib/__init__.py#L225"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
 
 ## <kbd>function</kbd> `discover_files_in_filetree`
 
