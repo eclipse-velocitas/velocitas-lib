@@ -202,20 +202,20 @@ Reads the file with the given file_path and returns it's content as a str.
 write_file(file_path: str, content: str) → bool
 ```
 
-Writes the specified content to the specified file_path and returns it's content as a str. 
+Writes the content to the file_path and returns the success of the write operation. 
 
 
 
 **Args:**
  
- - <b>`file_path`</b> (str):  the file_path of the file to read. 
+ - <b>`file_path`</b> (str):  the file_path of the file to write. 
  - <b>`content`</b> (str):  the content to be written to the file. 
 
 
 
 **Returns:**
  
- - <b>`bool`</b>:  True if writing was successful, false otherwise. 
+ - <b>`bool`</b>:  True if writing was successful, False otherwise. 
 
 
 

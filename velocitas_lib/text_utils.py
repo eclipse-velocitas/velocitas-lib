@@ -188,14 +188,14 @@ def write_file(
     file_path: str,
     content: str,
 ) -> bool:
-    """Writes the specified content to the specified file_path and returns it's content as a str.
+    """Writes the content to the file_path and returns the success of the write operation.
 
     Args:
-        file_path (str): the file_path of the file to read.
+        file_path (str): the file_path of the file to write.
         content (str): the content to be written to the file.
 
     Returns:
-        bool: True if writing was successful, false otherwise.
+        bool: True if writing was successful, False otherwise.
     """
 
     try:

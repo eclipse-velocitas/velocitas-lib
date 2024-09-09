@@ -63,7 +63,7 @@
 - [`text_utils.replace_text_area`](./velocitas_lib.text_utils.md#function-replace_text_area): Replace all occurrences of all text areas matching the parameters with a replacement.
 - [`text_utils.replace_text_in_file`](./velocitas_lib.text_utils.md#function-replace_text_in_file): Replace all occurrences of text in a file with a replacement.
 - [`text_utils.to_camel_case`](./velocitas_lib.text_utils.md#function-to_camel_case): Return a camel case version of a snake case string.
-- [`text_utils.write_file`](./velocitas_lib.text_utils.md#function-write_file): Writes the specified content to the specified file_path and returns it's content as a str.
+- [`text_utils.write_file`](./velocitas_lib.text_utils.md#function-write_file): Writes the content to the file_path and returns the success of the write operation.
 - [`variables.json_obj_to_flat_map`](./velocitas_lib.variables.md#function-json_obj_to_flat_map): Flatten a JSON Object into a one dimensional dict by joining the keys
 
 
