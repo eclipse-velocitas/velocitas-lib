@@ -159,3 +159,49 @@ def capture_area_in_file(
 
             area_content.append(line)
     return area_content
+
+
+def read_file(
+    file_path: str,
+) -> Optional[str]:
+    """Reads the file with the given file_path and returns it's content as a str.
+
+    Args:
+        file_path (str): the file_path of the file to read.
+
+    Returns:
+        str: the content of the specified file.
+    """
+
+    try:
+        with open(file_path, "r") as file:
+            file_content = file.read()
+        return file_content
+    except FileNotFoundError:
+        print(f"File {file_path} not found")
+    except Exception as e:
+        print(f"An error occurred: {e}")
+    return None
+
+
+def write_file(
+    file_path: str,
+    content: str,
+) -> bool:
+    """Writes the specified content to the specified file_path and returns it's content as a str.
+
+    Args:
+        file_path (str): the file_path of the file to read.
+        content (str): the content to be written to the file.
+
+    Returns:
+        bool: True if writing was successful, false otherwise.
+    """
+
+    try:
+        with open(file_path, "w") as file:
+            file.write(content)
+            return True
+    except Exception as e:
+        print(f"An error occurred: {e}")
+        return False

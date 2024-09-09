@@ -167,6 +167,57 @@ Capture an area of a textfile between a matching start line (exclusive) and the 
  - <b>`List[str]`</b>:  A list of captured lines. 
 
 
+---
+
+<a href="../velocitas_lib/text_utils.py#L164"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+
+## <kbd>function</kbd> `read_file`
+
+```python
+read_file(file_path: str) → Optional[str]
+```
+
+Reads the file with the given file_path and returns it's content as a str. 
+
+
+
+**Args:**
+ 
+ - <b>`file_path`</b> (str):  the file_path of the file to read. 
+
+
+
+**Returns:**
+ 
+ - <b>`str`</b>:  the content of the specified file. 
+
+
+---
+
+<a href="../velocitas_lib/text_utils.py#L187"><img align="right" style="float:right;" src="https://img.shields.io/badge/-source-cccccc?style=flat-square"></a>
+
+## <kbd>function</kbd> `write_file`
+
+```python
+write_file(file_path: str, content: str) → bool
+```
+
+Writes the specified content to the specified file_path and returns it's content as a str. 
+
+
+
+**Args:**
+ 
+ - <b>`file_path`</b> (str):  the file_path of the file to read. 
+ - <b>`content`</b> (str):  the content to be written to the file. 
+
+
+
+**Returns:**
+ 
+ - <b>`bool`</b>:  True if writing was successful, false otherwise. 
+
+
 
 
 ---
