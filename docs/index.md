@@ -7,6 +7,7 @@
 - [`velocitas_lib`](./velocitas_lib.md#module-velocitas_lib)
 - [`velocitas_lib.conan_utils`](./velocitas_lib.conan_utils.md#module-velocitas_libconan_utils)
 - [`velocitas_lib.docker`](./velocitas_lib.docker.md#module-velocitas_libdocker)
+- [`velocitas_lib.file_utils`](./velocitas_lib.file_utils.md#module-velocitas_libfile_utils)
 - [`velocitas_lib.functional_interface`](./velocitas_lib.functional_interface.md#module-velocitas_libfunctional_interface)
 - [`velocitas_lib.middleware`](./velocitas_lib.middleware.md#module-velocitas_libmiddleware)
 - [`velocitas_lib.services`](./velocitas_lib.services.md#module-velocitas_libservices)
@@ -48,6 +49,10 @@
 - [`docker.container_exists`](./velocitas_lib.docker.md#function-container_exists): Check if a container with a given name exists.
 - [`docker.is_docker_image_build_locally`](./velocitas_lib.docker.md#function-is_docker_image_build_locally): Check if vehicle app docker image is locally available
 - [`docker.push_docker_image_to_registry`](./velocitas_lib.docker.md#function-push_docker_image_to_registry): Push docker image to local image registry
+- [`file_utils.capture_area_in_file`](./velocitas_lib.file_utils.md#function-capture_area_in_file): Capture an area of a textfile between a matching start line (exclusive) and the first line matching end_line (exclusive).
+- [`file_utils.read_file`](./velocitas_lib.file_utils.md#function-read_file): Reads the file with the given file_path and returns it's content as a str.
+- [`file_utils.replace_text_in_file`](./velocitas_lib.file_utils.md#function-replace_text_in_file): Replace all occurrences of text in a file with a replacement.
+- [`file_utils.write_file`](./velocitas_lib.file_utils.md#function-write_file): Writes the content to the file_path and returns the success of the write operation.
 - [`functional_interface.get_interfaces_for_type`](./velocitas_lib.functional_interface.md#function-get_interfaces_for_type): Return all interfaces for the given type.
 - [`middleware.get_middleware_type`](./velocitas_lib.middleware.md#function-get_middleware_type): Return the current middleware type.
 - [`services.get_service_port`](./velocitas_lib.services.md#function-get_service_port): Return the service port as string for the specified service.
@@ -56,14 +61,10 @@
 - [`services.parse_service_config`](./velocitas_lib.services.md#function-parse_service_config): Parse service spec configuration and return it as an named tuple.
 - [`services.resolve_functions`](./velocitas_lib.services.md#function-resolve_functions)
 - [`templates.copy_templates`](./velocitas_lib.templates.md#function-copy_templates): Copy templates from the template dir to the target dir.
-- [`text_utils.capture_area_in_file`](./velocitas_lib.text_utils.md#function-capture_area_in_file): Capture an area of a textfile between a matching start line (exclusive) and the first line matching end_line (exclusive).
 - [`text_utils.create_truncated_string`](./velocitas_lib.text_utils.md#function-create_truncated_string): Create a truncated version of input if it is longer than length.
-- [`text_utils.read_file`](./velocitas_lib.text_utils.md#function-read_file): Reads the file with the given file_path and returns it's content as a str.
 - [`text_utils.replace_item_in_list`](./velocitas_lib.text_utils.md#function-replace_item_in_list): Replace the whole line which matches the given text with a replacement.
 - [`text_utils.replace_text_area`](./velocitas_lib.text_utils.md#function-replace_text_area): Replace all occurrences of all text areas matching the parameters with a replacement.
-- [`text_utils.replace_text_in_file`](./velocitas_lib.text_utils.md#function-replace_text_in_file): Replace all occurrences of text in a file with a replacement.
 - [`text_utils.to_camel_case`](./velocitas_lib.text_utils.md#function-to_camel_case): Return a camel case version of a snake case string.
-- [`text_utils.write_file`](./velocitas_lib.text_utils.md#function-write_file): Writes the content to the file_path and returns the success of the write operation.
 - [`variables.json_obj_to_flat_map`](./velocitas_lib.variables.md#function-json_obj_to_flat_map): Flatten a JSON Object into a one dimensional dict by joining the keys
 
 
